@@ -84,10 +84,10 @@
 
     var random = Math.floor(Math.random()*urls.length);
 
-    window.frames[content].location.assign(urls[random]);
+    window.frames["theContent"].location.assign(urls[random]);
     //setTimeout( location.assign(urls[random]), 500);
 
   </script>
-  <iframe id="content"  height="100%" width="100%" style="border: none"></iframe>
+  <iframe id="theContent"  height="100%" width="100%" style="border: none"></iframe>
 </body>
 </html>
