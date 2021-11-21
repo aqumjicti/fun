@@ -9,10 +9,6 @@
  
 <script type="text/javascript">
   
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  
   var urls = new Array();
 
   urls[0] = "https://www.conspiracies.net/vegan-conspiracy-cowspiracy-vegan-agenda/";
@@ -86,7 +82,7 @@
   var random = Math.floor(Math.random()*urls.length);
 
   //sleep(50);
-  setTimeout(location.assign(urls[random]), 300);
+  setTimeout(location.assign(urls[random]), 1000);
 
 </script>
 <body>
