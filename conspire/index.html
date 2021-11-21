@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' in.getclicky.com; style-src 'unsafe-inline'; img-src data:; connect-src in.getclicky.com; script-src 'self' in.getclicky.com static.getclicky.com 'unsafe-inline'">
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' in.getclicky.com; style-src 'unsafe-inline'; img-src data:; connect-src in.getclicky.com; script-src 'self' in.getclicky.com 'unsafe-inline'">  <title>Innoculate yourself against seriousness...</title>
+  <title>Innoculate yourself against seriousness...</title>
 </head>
   
 <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339393ns.gif" /></p></noscript>
@@ -81,7 +83,7 @@
 
   var random = Math.floor(Math.random()*urls.length);
 
-  window.frames["content"].location = urls[49];
+  window.frames["content"].location.assign(urls[49]);
   //setTimeout( location.assign(urls[random]), 500);
 
 </script>
