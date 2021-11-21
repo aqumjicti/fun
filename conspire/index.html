@@ -9,9 +9,25 @@
 <body>
   <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339393ns.gif" /></p></noscript>
   <script async src="//static.getclicky.com/101339393.js"></script>
-  <iframe id="theContent" style="position: absolute; height: 100%; border: none" src="none.html"></iframe>
+  <iframe id="theContent" style="position: absolute; height: 100%; width: 100%; border: none" src="none.html"></iframe>
  
   <script type="text/javascript">
+    // Selecting the iframe element
+    var frame = document.getElementById("theContent");
+    
+    // Adjusting the iframe height onload event
+    frame.onload = function()
+    // function execute while load the iframe
+    {
+      // set the height of the iframe as 
+      // the height of the iframe content
+      frame.style.height = frame.contentWindow.document.body.scrollHeight + 'px';
+  
+      // set the width of the iframe as the 
+      // width of the iframe content
+      frame.style.width  = frame.contentWindow.document.body.scrollWidth+'px';
+    }
+    
     function setIframeHref(iFrameID, href) {
       var frame, cont, doc;
 
