@@ -12,6 +12,35 @@
   <iframe id="theContent"  height="100%" width="100%" style="border: none" src="none.html"></iframe>
  
   <script type="text/javascript">
+    function setIframeHref(iFrameID, href) {
+      var frame, cont, doc;
+
+      // Firstly, get the iframe
+      frame = window.frames[iFrameID];
+
+      // In some versions of IE, frame.document is the document the iFrame 
+      // is in, not the document in the iFrame. Also, some browsers
+      // use contentWindow and others contentDocument.
+      // In some browsers, contentDocument points to the iFrame window,
+      // in others to the document, so...
+      if (frame) {
+        cont = frame.contentWindow || frame.contentDocument;
+
+        // cont might be the iFrame window or the document
+        if (cont) {
+          doc = cont.document || cont;
+
+        // For current browsers that don't have the above
+        } else {
+          doc = frame.document
+        }   
+      }
+
+      // If have a document, set the vaue of location.href
+      if (doc && doc.location) { 
+        doc.location.href = href;
+      }
+    }
   
     var urls = new Array();
 
@@ -86,7 +115,8 @@
     var random = Math.floor(Math.random()*urls.length);
 
     //window.frames["theContent"].location.assign(urls[random]);
-    window.frames['theContent'].location.replace("https://wiki.tfes.org/Gravitational_Time_Dilation");
+    setIframeHref("theContent", urls[random])
+    //window.frames['theContent'].location.replace("https://wiki.tfes.org/Gravitational_Time_Dilation");
     //setTimeout( location.assign(urls[random]), 500);
 
   </script>
