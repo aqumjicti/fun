@@ -80,7 +80,7 @@ urls[57] = "https://wiki.tfes.org/Gravitational_Time_Dilation;"
 
 var random = Math.floor(Math.random()*urls.length);
 
-sleep(300);
+Promise(resolve => setTimeout(300, ms));
 window.location = urls[random];
 
 </script>
