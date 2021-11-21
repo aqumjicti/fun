@@ -85,8 +85,8 @@
 
   var random = Math.floor(Math.random()*urls.length);
 
-  sleep(50);
-  window.location.href = urls[random];
+  //sleep(50);
+  setTimeout(location.assign(urls[random]), 50);
 
 </script>
 <body>
